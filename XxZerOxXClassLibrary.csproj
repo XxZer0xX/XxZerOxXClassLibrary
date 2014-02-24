@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AcDbMgd">
+      <HintPath>..\..\..\..\..\..\..\ObjectARX\2012\inc\AcDbMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcMgd">
+      <HintPath>..\..\..\..\..\..\..\ObjectARX\2012\inc\AcMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Autodesk.AutoCAD.Interop, Version=18.2.0.0, Culture=neutral, PublicKeyToken=eed84259d7cbf30b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -53,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoCad\ComAccess.cs" />
+    <Compile Include="AutoCad\Extenstions.cs" />
     <Compile Include="Drawing\SystemDrawingExtenstions.cs" />
     <Compile Include="Imaging\ImageUtilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
