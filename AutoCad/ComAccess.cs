@@ -18,20 +18,32 @@ namespace XxZerOxXClassLibrary.AutoCad
             try
             {
                 AcApp = (AcadApplication)Marshal.GetActiveObject("AutoCad.Application");
-
             }
             catch
             {
                 try
                 {
+                    var versionInfo = FileVersionInfo.GetVersionInfo(autocadExePath);
+                    string projid = string.Format("{0}.{1}.{2}",
+                        versionInfo.FileDescription.Replace(' ', '.'),
+                        versionInfo.ProductMajorPart,
+                        versionInfo.ProductMinorPart);
+                        
+                        
+                    //Type type = Type.GetTypeFromProgID(projid);
+                    //AcApp = Activator.CreateInstance(type);
+
                     var acadProcess = new Process();
                     acadProcess.StartInfo.Arguments = "/nologo";
                     acadProcess.StartInfo.FileName = autocadExePath;
                     acadProcess.Start();
                     while (AcApp == null)
                     {
-                        try { AcApp = (AcadApplication)Marshal.GetActiveObject("AutoCad.Application"); }
-                        catch { }
+                        try
+                        {
+                            AcApp = (AcadApplication)Marshal.GetActiveObject(projid);
+                        }
+                        catch (Exception ex) { }
                     }
                 }
                 catch (COMException)
