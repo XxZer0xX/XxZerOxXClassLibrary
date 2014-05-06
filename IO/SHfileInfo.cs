@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace XxZerOxXClassLibrary
+namespace XxZerOxXClassLibrary.IO
 {
 
     [StructLayout(LayoutKind.Sequential)]

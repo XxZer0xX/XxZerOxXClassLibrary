@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using XxZerOxXClassLibrary;
+﻿using System.Runtime.InteropServices;
+using XxZerOxXClassLibrary.IO;
+using XxZerOxXClassLibrary.IO.Extern;
 
 namespace XxZerOxXClassLibrary.Imaging
 {

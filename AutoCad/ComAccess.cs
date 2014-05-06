@@ -1,18 +1,14 @@
 ﻿using Autodesk.AutoCAD.Interop;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace XxZerOxXClassLibrary.AutoCad
 {
     public static class ComAccess
     {
-        public static AcadApplication GetAcadApplication(string autocadExePath)
+        public static AcadApplication GetAcadApplication(string autocadExePath, bool visible = true)
         {
             AcadApplication AcApp = null;
             try
@@ -28,8 +24,8 @@ namespace XxZerOxXClassLibrary.AutoCad
                         versionInfo.FileDescription.Replace(' ', '.'),
                         versionInfo.ProductMajorPart,
                         versionInfo.ProductMinorPart);
-                        
-                        
+
+
                     //Type type = Type.GetTypeFromProgID(projid);
                     //AcApp = Activator.CreateInstance(type);
 
@@ -59,6 +55,9 @@ namespace XxZerOxXClassLibrary.AutoCad
 
                 if (i == 120)
                     Environment.Exit(0);
+
+                if (!visible)
+                    AcApp.Visible = visible;
 
             }
             catch (COMException err)

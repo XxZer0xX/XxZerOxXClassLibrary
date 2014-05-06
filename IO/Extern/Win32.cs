@@ -1,6 +1,7 @@
 ﻿using System;
+using XxZerOxXClassLibrary.IO;
 
-namespace XxZerOxXClassLibrary
+namespace XxZerOxXClassLibrary.IO.Extern
 {
     internal sealed class Win32
     {
